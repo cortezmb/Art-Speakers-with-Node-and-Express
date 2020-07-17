@@ -9,9 +9,9 @@ router.get('/speakers', (req, res) => {
 })
 
 
-router.get('/speakers/:id', (req, res) => {
+// router.get('/speakers/:id', (req, res) => {
 
-    res.render('speakers')
+//     res.render('speakers')
 })
 
 module.exports = router;

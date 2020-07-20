@@ -1,30 +1,29 @@
-//create an express
 const express = require('express');
 
-//router method allows us to route back to app.js
 const router = express.Router();
 
 let dataFile = require('../data/data.json');
 
+//{speakers: [{artwork: []}, {}, {}]} //we want to loop through the artwork
+
 router.get('/', (req, res) => {
 
-    let pageSpeakers = dataFile.speakers //dataFile is an object. Key is speakers.This will give us an array of objects
 
-    let pagePhotos = []; //populate with all of the artwork
+    let pageSpeakers = dataFile.speakers; //this is an array from datafile object just pulling the speaker object
 
-    pageSpeakers.forEach((speakerObj) => {
+    let pagePhotos = [];  //populate with all of the artwork
 
-        pagePhotos = pagePhotos.concat(speakersObj.artwork) //concat merges two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+    pageSpeakers.forEach((speakersObj) => {
+      
 
-    }) //as it loops through it will grab an object
+        pagePhotos = pagePhotos.concat(speakersObj.artwork)
+    })
 
+    
     res.render('index', {
-
+        
         photos: pagePhotos
-    });
+    })
 })
 
-
-
-//now we need to export the file (router.get) back to app.js
 module.exports = router;

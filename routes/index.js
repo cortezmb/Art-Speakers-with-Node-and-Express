@@ -22,7 +22,10 @@ router.get('/', (req, res) => {
     
     res.render('index', {
         
-        photos: pagePhotos
+        pageTitle: "Art Speakers",
+        artwork: pagePhotos,
+        pageID: 'home',
+        maxList: pageSpeakers
     })
 })
 

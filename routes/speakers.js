@@ -15,7 +15,8 @@ router.get('/speakers', (req, res) => {
     res.render('speakers', {
         artwork: pagePhotos,
         speakers: pageSpeakers,
-        maxlist: pageSpeakers
+        maxList: pageSpeakers,
+        pageID: "Speaker chat"
     })
 })
 
@@ -39,7 +40,10 @@ router.get('/speakers/:speakersid', (req, res) => {
     res.render('speakers', {
         artwork: photos,
         speakers: speakers,
-        maxlist: speakersArry
+        maxList: speakersArry,
+        pageTitle: `Roux Meetups -- ${speakers[0].name}`,
+        pageID: "Speaker Detail"
+        
     })
 })
 
